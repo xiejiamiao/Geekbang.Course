@@ -19,7 +19,7 @@ namespace DependencyInjectionDemo.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,IOrderService orderService,IGenericService<IOrderService> genericService)
         {
             _logger = logger;
         }
@@ -55,6 +55,17 @@ namespace DependencyInjectionDemo.Controllers
             Console.WriteLine($"{nameof(transientService2)}:{transientService2.GetHashCode()}");
 
             Console.WriteLine("=========请求结束========");
+            return 1;
+        }
+
+        [HttpGet]
+        public int GetServiceList([FromServices] IEnumerable<IOrderService> orderServices)
+        {
+            foreach (var item in orderServices)
+            {
+                Console.WriteLine($"获取到服务实例：{item.ToString()}:{item.GetHashCode()}");
+            }
+
             return 1;
         }
     }
