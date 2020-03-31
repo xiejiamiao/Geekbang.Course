@@ -13,11 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.DependencyInjection", "0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.DependencyInjectionScopeAndDisposable", "03.DependencyInjectionScopeAndDisposable", "{9319DC8F-648C-4DEE-93E9-98F09C0DB8F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionScopeAndDisposableDemo", "DependencyInjectionScopeAndDisposableDemo\DependencyInjectionScopeAndDisposableDemo.csproj", "{BF3D0871-DC2C-447F-87DA-14B024899400}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionScopeAndDisposableDemo", "DependencyInjectionScopeAndDisposableDemo\DependencyInjectionScopeAndDisposableDemo.csproj", "{BF3D0871-DC2C-447F-87DA-14B024899400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionAutofacDemo", "DependencyInjectionAutofacDemo\DependencyInjectionAutofacDemo.csproj", "{0FAAA10B-FE73-4223-9903-255ED425ED43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionAutofacDemo", "DependencyInjectionAutofacDemo\DependencyInjectionAutofacDemo.csproj", "{0FAAA10B-FE73-4223-9903-255ED425ED43}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.DependencyInjectionAutofac", "04.DependencyInjectionAutofac", "{FB02DBFE-7A4F-4780-99EE-0619DE968E6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Configuration", "05.Configuration", "{FFBD175E-65F9-4D56-AB6A-829990D3D073}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationDemo", "ConfigurationDemo\ConfigurationDemo.csproj", "{C6CDFC57-ECA8-410B-856F-884E5DDCF2BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationCommandLineDemo", "ConfigurationCommandLineDemo\ConfigurationCommandLineDemo.csproj", "{172E8E76-B233-4626-8EBB-EDCC491B1853}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +47,14 @@ Global
 		{0FAAA10B-FE73-4223-9903-255ED425ED43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FAAA10B-FE73-4223-9903-255ED425ED43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FAAA10B-FE73-4223-9903-255ED425ED43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6CDFC57-ECA8-410B-856F-884E5DDCF2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6CDFC57-ECA8-410B-856F-884E5DDCF2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6CDFC57-ECA8-410B-856F-884E5DDCF2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6CDFC57-ECA8-410B-856F-884E5DDCF2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172E8E76-B233-4626-8EBB-EDCC491B1853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172E8E76-B233-4626-8EBB-EDCC491B1853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172E8E76-B233-4626-8EBB-EDCC491B1853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172E8E76-B233-4626-8EBB-EDCC491B1853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +64,8 @@ Global
 		{9471C3F9-7EF1-47BC-BC10-3CEC516EA09A} = {263E7F21-0F55-4EFD-8F61-4A46FEE10D51}
 		{BF3D0871-DC2C-447F-87DA-14B024899400} = {9319DC8F-648C-4DEE-93E9-98F09C0DB8F5}
 		{0FAAA10B-FE73-4223-9903-255ED425ED43} = {FB02DBFE-7A4F-4780-99EE-0619DE968E6A}
+		{C6CDFC57-ECA8-410B-856F-884E5DDCF2BB} = {FFBD175E-65F9-4D56-AB6A-829990D3D073}
+		{172E8E76-B233-4626-8EBB-EDCC491B1853} = {FFBD175E-65F9-4D56-AB6A-829990D3D073}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E9D65C7-694A-444A-BF52-13F065509BEB}
