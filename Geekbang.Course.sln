@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Startup", "01.Startup", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.DependencyInjection", "02.DependencyInjection", "{263E7F21-0F55-4EFD-8F61-4A46FEE10D51}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.DependencyInjectionScopeAndDisposable", "03.DependencyInjectionScopeAndDisposable", "{9319DC8F-648C-4DEE-93E9-98F09C0DB8F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionScopeAndDisposableDemo", "DependencyInjectionScopeAndDisposableDemo\DependencyInjectionScopeAndDisposableDemo.csproj", "{BF3D0871-DC2C-447F-87DA-14B024899400}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{9471C3F9-7EF1-47BC-BC10-3CEC516EA09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9471C3F9-7EF1-47BC-BC10-3CEC516EA09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9471C3F9-7EF1-47BC-BC10-3CEC516EA09A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF3D0871-DC2C-447F-87DA-14B024899400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF3D0871-DC2C-447F-87DA-14B024899400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF3D0871-DC2C-447F-87DA-14B024899400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF3D0871-DC2C-447F-87DA-14B024899400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F04B8416-220B-48C7-8498-99B6C06C9035} = {4F0A6C27-76F6-4250-A74E-308FAE856E5B}
 		{9471C3F9-7EF1-47BC-BC10-3CEC516EA09A} = {263E7F21-0F55-4EFD-8F61-4A46FEE10D51}
+		{BF3D0871-DC2C-447F-87DA-14B024899400} = {9319DC8F-648C-4DEE-93E9-98F09C0DB8F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E9D65C7-694A-444A-BF52-13F065509BEB}
