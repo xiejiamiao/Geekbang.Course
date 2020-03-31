@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "ConfigurationEnvironmentVariablesDemo": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DIMSUM_KEY1": "dimsum_value1",
+        "KEY3": "value3",
+        "KEY1": "value1",
+        "SECTIONA__KEY2": "value2",
+        "KEY4": "value4"
+      }
+    }
+  }
+}
