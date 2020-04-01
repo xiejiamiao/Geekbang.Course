@@ -27,6 +27,12 @@ keywords:
     - [`IOptionsMonitor`监听配置变动](#ioptionsmonitor%e7%9b%91%e5%90%ac%e9%85%8d%e7%bd%ae%e5%8f%98%e5%8a%a8)
 - [优化代码结构](#%e4%bc%98%e5%8c%96%e4%bb%a3%e7%a0%81%e7%bb%93%e6%9e%84)
 - [动态修改选项值](#%e5%8a%a8%e6%80%81%e4%bf%ae%e6%94%b9%e9%80%89%e9%a1%b9%e5%80%bc)
+- [为选项添加验证逻辑](#%e4%b8%ba%e9%80%89%e9%a1%b9%e6%b7%bb%e5%8a%a0%e9%aa%8c%e8%af%81%e9%80%bb%e8%be%91)
+  - [三种验证方法](#%e4%b8%89%e7%a7%8d%e9%aa%8c%e8%af%81%e6%96%b9%e6%b3%95)
+  - [代码示例](#%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b-1)
+    - [直接注册验证](#%e7%9b%b4%e6%8e%a5%e6%b3%a8%e5%86%8c%e9%aa%8c%e8%af%81)
+    - [实现`IValidateOptions<TOptions>`](#%e5%ae%9e%e7%8e%b0ivalidateoptionstoptions)
+    - [使用属性标签的方式](#%e4%bd%bf%e7%94%a8%e5%b1%9e%e6%80%a7%e6%a0%87%e7%ad%be%e7%9a%84%e6%96%b9%e5%bc%8f)
 
 # 选项框架特性
 * 支持单例模式读取配置
@@ -239,3 +245,113 @@ namespace OptionsDemo.Services
 }
 ```
 运行代码，可发现获得到的值比`appsettings.json`里的值增加`100`
+
+
+
+# 为选项添加验证逻辑
+## 三种验证方法
+* 直接注册验证函数
+* 实现`IValidateOptions<TOptions>`
+* 使用`Microsoft.Extensions.Options.DataAnnotations`
+
+## 代码示例
+### 直接注册验证
+修改`OrderServiceExtensions`，具体代码如下：
+``` csharp
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+
+namespace OptionsDemo.Services
+{
+    public static class OrderServiceExtensions
+    {
+        public static IServiceCollection AddOrderService(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddOptions<OrderServiceOptions>().Configure(options =>
+            {
+                configuration.GetSection("OrderService").Bind(options);
+            }).Validate(options =>
+            {
+                return options.MaxOrderCount <= 100;
+            },"MaxOrderCount 不能大于100");
+            services.AddSingleton<IOrderService, OrderService>();
+            return services;
+        }
+    }
+}
+
+```
+修改`appsettings.json`对应的配置为`101`，然后运行代码，访问`/WeatherForecast`的时候会报错提示`MaxOrderCount 不能大于100`
+### 实现`IValidateOptions<TOptions>`
+修改`OrderService.cs`，在里面新增`OrderServiceValidateOptions`类，实现`IValidateOptions<OrderServiceOptions>`接口，具体代码如下：
+``` csharp
+public class OrderServiceValidateOptions : IValidateOptions<OrderServiceOptions>
+{
+    public ValidateOptionsResult Validate(string name, OrderServiceOptions options)
+    {
+        if (options.MaxOrderCount > 100)
+        {
+            return ValidateOptionsResult.Fail("MaxOrderCount 不能大于100");
+        }
+        else
+        {
+            return ValidateOptionsResult.Success;
+        }
+    }
+}
+```
+修改`OrderServiceExtensions`，具体代码如下：
+``` csharp
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+
+namespace OptionsDemo.Services
+{
+    public static class OrderServiceExtensions
+    {
+        public static IServiceCollection AddOrderService(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddOptions<OrderServiceOptions>()
+                .Configure(options => { configuration.GetSection("OrderService").Bind(options); }).Services
+                .AddSingleton<IValidateOptions<OrderServiceOptions>, OrderServiceValidateOptions>();
+            services.AddSingleton<IOrderService, OrderService>();
+            return services;
+        }
+    }
+}
+```
+运行代码会得到与上一个示例一致的结果
+### 使用属性标签的方式
+修改`OrderServiceOptions`，具体代码如下：
+``` csharp
+public class OrderServiceOptions
+{
+    [Range(1,20)]
+    public int MaxOrderCount { get; set; } = 100;
+}
+```
+修改`OrderServiceExtensions`，具体代码如下：
+``` csharp
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+
+namespace OptionsDemo.Services
+{
+    public static class OrderServiceExtensions
+    {
+        public static IServiceCollection AddOrderService(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddOptions<OrderServiceOptions>().Configure(options =>
+            {
+                configuration.GetSection("OrderService").Bind(options);
+            }).ValidateDataAnnotations();
+            services.AddSingleton<IOrderService, OrderService>();
+            return services;
+        }
+    }
+}
+```
+运行代码，访问`/WeatherForecast`会提示`The field MaxOrderCount must be between 1 and 20.`的错误信息
