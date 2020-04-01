@@ -21,13 +21,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.DependencyInjectionAutof
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Configuration", "05.Configuration", "{FFBD175E-65F9-4D56-AB6A-829990D3D073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationDemo", "ConfigurationDemo\ConfigurationDemo.csproj", "{C6CDFC57-ECA8-410B-856F-884E5DDCF2BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationDemo", "ConfigurationDemo\ConfigurationDemo.csproj", "{C6CDFC57-ECA8-410B-856F-884E5DDCF2BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationCommandLineDemo", "ConfigurationCommandLineDemo\ConfigurationCommandLineDemo.csproj", "{172E8E76-B233-4626-8EBB-EDCC491B1853}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationCommandLineDemo", "ConfigurationCommandLineDemo\ConfigurationCommandLineDemo.csproj", "{172E8E76-B233-4626-8EBB-EDCC491B1853}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationEnvironmentVariablesDemo", "ConfigurationEnvironmentVariablesDemo\ConfigurationEnvironmentVariablesDemo.csproj", "{860D057D-CAC1-484C-8971-E55708A3ED79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationEnvironmentVariablesDemo", "ConfigurationEnvironmentVariablesDemo\ConfigurationEnvironmentVariablesDemo.csproj", "{860D057D-CAC1-484C-8971-E55708A3ED79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationFileDemo", "ConfigurationFileDemo\ConfigurationFileDemo.csproj", "{74301E9A-4AC8-4AD5-850E-CAC47FE51E22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationFileDemo", "ConfigurationFileDemo\ConfigurationFileDemo.csproj", "{74301E9A-4AC8-4AD5-850E-CAC47FE51E22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationCustomDemo", "ConfigurationCustomDemo\ConfigurationCustomDemo.csproj", "{54A5B2DA-CA2B-4F82-8E21-DCDE8682168D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionsDemo", "OptionsDemo\OptionsDemo.csproj", "{54D17A3B-4339-40B3-A8BB-3D274204A8B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,14 @@ Global
 		{74301E9A-4AC8-4AD5-850E-CAC47FE51E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74301E9A-4AC8-4AD5-850E-CAC47FE51E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74301E9A-4AC8-4AD5-850E-CAC47FE51E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A5B2DA-CA2B-4F82-8E21-DCDE8682168D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A5B2DA-CA2B-4F82-8E21-DCDE8682168D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A5B2DA-CA2B-4F82-8E21-DCDE8682168D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A5B2DA-CA2B-4F82-8E21-DCDE8682168D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D17A3B-4339-40B3-A8BB-3D274204A8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D17A3B-4339-40B3-A8BB-3D274204A8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D17A3B-4339-40B3-A8BB-3D274204A8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D17A3B-4339-40B3-A8BB-3D274204A8B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +92,8 @@ Global
 		{172E8E76-B233-4626-8EBB-EDCC491B1853} = {FFBD175E-65F9-4D56-AB6A-829990D3D073}
 		{860D057D-CAC1-484C-8971-E55708A3ED79} = {FFBD175E-65F9-4D56-AB6A-829990D3D073}
 		{74301E9A-4AC8-4AD5-850E-CAC47FE51E22} = {FFBD175E-65F9-4D56-AB6A-829990D3D073}
+		{54A5B2DA-CA2B-4F82-8E21-DCDE8682168D} = {FFBD175E-65F9-4D56-AB6A-829990D3D073}
+		{54D17A3B-4339-40B3-A8BB-3D274204A8B2} = {FFBD175E-65F9-4D56-AB6A-829990D3D073}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E9D65C7-694A-444A-BF52-13F065509BEB}
