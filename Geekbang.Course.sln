@@ -25,21 +25,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationEnvironmentVar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationFileDemo", "ConfigurationFileDemo\ConfigurationFileDemo.csproj", "{74301E9A-4AC8-4AD5-850E-CAC47FE51E22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationCustomDemo", "ConfigurationCustomDemo\ConfigurationCustomDemo.csproj", "{54A5B2DA-CA2B-4F82-8E21-DCDE8682168D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationCustomDemo", "ConfigurationCustomDemo\ConfigurationCustomDemo.csproj", "{54A5B2DA-CA2B-4F82-8E21-DCDE8682168D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionsDemo", "OptionsDemo\OptionsDemo.csproj", "{54D17A3B-4339-40B3-A8BB-3D274204A8B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionsDemo", "OptionsDemo\OptionsDemo.csproj", "{54D17A3B-4339-40B3-A8BB-3D274204A8B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Log", "04.Log", "{6596B335-D464-47EA-9BDB-ED2CA0067E55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSimpleDemo", "LoggingSimpleDemo\LoggingSimpleDemo.csproj", "{AC955159-14EE-4314-AFE6-24F87655D548}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingSimpleDemo", "LoggingSimpleDemo\LoggingSimpleDemo.csproj", "{AC955159-14EE-4314-AFE6-24F87655D548}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSimpleWebDemo", "LoggingSimpleWebDemo\LoggingSimpleWebDemo.csproj", "{2B4F18F3-26F2-4B9D-B744-449D24026D0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingSimpleWebDemo", "LoggingSimpleWebDemo\LoggingSimpleWebDemo.csproj", "{2B4F18F3-26F2-4B9D-B744-449D24026D0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSerilogDemo", "LoggingSerilogDemo\LoggingSerilogDemo.csproj", "{6A7F84C3-D2C0-4C07-AA59-ADB8F7E9E7D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingSerilogDemo", "LoggingSerilogDemo\LoggingSerilogDemo.csproj", "{6A7F84C3-D2C0-4C07-AA59-ADB8F7E9E7D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Middleware", "05.Middleware", "{4FC89C70-50DD-4D96-AE7A-007A53D6C524}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddlewareDemo", "MiddlewareDemo\MiddlewareDemo.csproj", "{F93A8337-9A00-434F-91FF-BFB49D226393}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiddlewareDemo", "MiddlewareDemo\MiddlewareDemo.csproj", "{F93A8337-9A00-434F-91FF-BFB49D226393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionDemo", "ExceptionDemo\ExceptionDemo.csproj", "{6857D2A9-48FC-4895-A5BF-169528C1964A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{F93A8337-9A00-434F-91FF-BFB49D226393}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F93A8337-9A00-434F-91FF-BFB49D226393}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F93A8337-9A00-434F-91FF-BFB49D226393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6857D2A9-48FC-4895-A5BF-169528C1964A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6857D2A9-48FC-4895-A5BF-169528C1964A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6857D2A9-48FC-4895-A5BF-169528C1964A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6857D2A9-48FC-4895-A5BF-169528C1964A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +128,7 @@ Global
 		{2B4F18F3-26F2-4B9D-B744-449D24026D0C} = {6596B335-D464-47EA-9BDB-ED2CA0067E55}
 		{6A7F84C3-D2C0-4C07-AA59-ADB8F7E9E7D9} = {6596B335-D464-47EA-9BDB-ED2CA0067E55}
 		{F93A8337-9A00-434F-91FF-BFB49D226393} = {4FC89C70-50DD-4D96-AE7A-007A53D6C524}
+		{6857D2A9-48FC-4895-A5BF-169528C1964A} = {4FC89C70-50DD-4D96-AE7A-007A53D6C524}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E9D65C7-694A-444A-BF52-13F065509BEB}

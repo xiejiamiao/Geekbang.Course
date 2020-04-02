@@ -1,0 +1,19 @@
+﻿@model ExceptionDemo.Exceptions.IKnownException
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div>
+    <p>错误码：@Model.ErrorCode</p>
+    <p>错误信息：@Model.Message</p>
+</div>
+</body>
+</html>
