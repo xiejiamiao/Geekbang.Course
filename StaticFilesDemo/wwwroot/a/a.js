@@ -1,0 +1,1 @@
+﻿alert("这是/a/index.html")
