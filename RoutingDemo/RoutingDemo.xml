@@ -4,6 +4,11 @@
         <name>RoutingDemo</name>
     </assembly>
     <members>
+        <member name="T:RoutingDemo.Controllers.OrderController">
+            <summary>
+            订单控制器
+            </summary>
+        </member>
         <member name="M:RoutingDemo.Controllers.OrderController.OrderExist(System.String)">
             <summary>
             订单是否存在

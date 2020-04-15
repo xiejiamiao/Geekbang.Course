@@ -5,16 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Commands\" />
-    <Folder Include="Application\DomainEventHandlers\" />
-    <Folder Include="Application\IntegrationEvents\" />
-    <Folder Include="Application\Queries\" />
     <Folder Include="Infrastructure\Auth\" />
     <Folder Include="Infrastructure\Caching\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetCore.CAP.Dashboard" Version="3.0.3" />
+    <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="3.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GeekTime.Infrastructure\GeekTime.Infrastructure.csproj" />
   </ItemGroup>
 
 

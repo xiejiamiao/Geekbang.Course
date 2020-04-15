@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using DotNetCore.CAP;
+using GeekTime.Infrastructure.Core.Extensions;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -10,10 +13,13 @@ namespace GeekTime.Infrastructure.Core
 {
     public class EFContext : DbContext, IUnitOfWork, ITransaction
     {
+        private readonly IMediator _mediator;
+        private readonly ICapPublisher _capBus;
 
-        public EFContext(DbContextOptions options) : base(options)
+        public EFContext(DbContextOptions options,IMediator mediator,ICapPublisher capBus) : base(options)
         {
-
+            _mediator = mediator;
+            _capBus = capBus;
         }
 
         #region IUnitOfWork
@@ -26,6 +32,7 @@ namespace GeekTime.Infrastructure.Core
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
         {
             var result = await base.SaveChangesAsync(cancellationToken);
+            await _mediator.DispatchDomainEventAsync(this);
             return true;
         }
 
@@ -35,25 +42,26 @@ namespace GeekTime.Infrastructure.Core
 
         #region ITransaction
 
-        private IDbContextTransaction _currenTransaction;
+        private IDbContextTransaction _currentTransaction;
 
-        public IDbContextTransaction GetCurrentTransaction() => _currenTransaction;
+        public IDbContextTransaction GetCurrentTransaction() => _currentTransaction;
 
-        public bool HasActiveTransaction => _currenTransaction != null;
+        public bool HasActiveTransaction => _currentTransaction != null;
 
         public async Task<IDbContextTransaction> BeginTransactionAsync()
         {
-            if (_currenTransaction != null) return null;
-            _currenTransaction = Database.BeginTransaction();
-            return _currenTransaction;
+            await Task.CompletedTask;
+            if (_currentTransaction != null) return null;
+            _currentTransaction = Database.BeginTransaction(_capBus, autoCommit: false);
+            return _currentTransaction;
         }
 
         public async Task CommitTransactionAsync(IDbContextTransaction transaction)
         {
             if (transaction == null) throw new ArgumentNullException(nameof(transaction));
-            if (transaction != _currenTransaction)
+            if (transaction != _currentTransaction)
                 throw new InvalidOperationException(
-                    $"Transaction {transaction.TransactionId} != CurrentTransaction {_currenTransaction.TransactionId}");
+                    $"Transaction {transaction.TransactionId} != CurrentTransaction {_currentTransaction.TransactionId}");
 
             try
             {
@@ -67,10 +75,10 @@ namespace GeekTime.Infrastructure.Core
             }
             finally
             {
-                if (_currenTransaction != null)
+                if (_currentTransaction != null)
                 {
-                    _currenTransaction.Dispose();
-                    _currenTransaction = null;
+                    _currentTransaction.Dispose();
+                    _currentTransaction = null;
                 }
             }
         }
@@ -79,14 +87,14 @@ namespace GeekTime.Infrastructure.Core
         {
             try
             {
-                _currenTransaction?.Rollback();
+                _currentTransaction?.Rollback();
             }
             finally
             {
-                if (_currenTransaction != null)
+                if (_currentTransaction != null)
                 {
-                    _currenTransaction.Dispose();
-                    _currenTransaction = null;
+                    _currentTransaction.Dispose();
+                    _currentTransaction = null;
                 }
             }
         }

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MediatR;
 
 namespace GeekTime.Domain.Abstractions
 {
-    class IDomainEvent
+    public interface IDomainEvent : INotification
     {
     }
 }

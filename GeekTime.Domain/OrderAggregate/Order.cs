@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
 using GeekTime.Domain.Abstractions;
+using GeekTime.Domain.Events;
 
 namespace GeekTime.Domain.OrderAggregate
 {
@@ -28,6 +29,8 @@ namespace GeekTime.Domain.OrderAggregate
             this.UserName = userName;
             this.ItemCount = itemCount;
             Address = address;
+
+            this.AddDomainEvent(new OrderCreatedDomainEvent(this));
         }
 
         public void ChangeAddress(Address address)

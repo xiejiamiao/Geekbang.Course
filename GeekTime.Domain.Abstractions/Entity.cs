@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GeekTime.Domain.Abstractions
 {
-    public abstract class Entity:IEntity
+    public abstract class Entity : IEntity
     {
         public abstract object[] GetKeys();
 
@@ -12,6 +12,28 @@ namespace GeekTime.Domain.Abstractions
         {
             return $"[Entity:{GetType().Name}] Keys = {string.Join(",", GetKeys())}";
         }
+
+        private List<IDomainEvent> _domainEvents;
+
+        #region 领域事件
+        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents?.AsReadOnly();
+
+        public void AddDomainEvent(IDomainEvent eventItem)
+        {
+            _domainEvents ??= new List<IDomainEvent>();
+            _domainEvents.Add(eventItem);
+        }
+
+        public void RemoveDomainEvent(IDomainEvent eventItem)
+        {
+            _domainEvents?.Remove(eventItem);
+        }
+
+        public void ClearDomainEvents()
+        {
+            _domainEvents?.Clear();
+        }
+        #endregion
     }
 
     public abstract class Entity<TKey> : Entity, IEntity<TKey>

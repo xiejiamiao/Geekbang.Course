@@ -53,7 +53,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07.Routing", "07.Routing", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoutingDemo", "RoutingDemo\RoutingDemo.csproj", "{B6CF4C34-F864-4C55-AB44-D986F934EEE0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.MicroService", "08.MicroService", "{3DE63A71-CB89-4B8C-825F-E0C9A43C394A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08.MicroService(Fail)", "08.MicroService(Fail)", "{3DE63A71-CB89-4B8C-825F-E0C9A43C394A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{9BB27811-1E68-46D7-BC6A-5373D32C39E9}"
 EndProject
@@ -63,19 +63,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{69EFEB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{75C2C7DD-D12D-4824-AE27-9A7DC15F3554}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekTime.Core", "GeekTime.Core\GeekTime.Core.csproj", "{3BB4D230-B61D-4C54-8C70-B230E864B7F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekTime.Core", "GeekTime.Core\GeekTime.Core.csproj", "{3BB4D230-B61D-4C54-8C70-B230E864B7F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekTime.Domain.Abstractions", "GeekTime.Domain.Abstractions\GeekTime.Domain.Abstractions.csproj", "{040D002D-B251-45BA-9C14-52FA92E08E90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekTime.Domain.Abstractions", "GeekTime.Domain.Abstractions\GeekTime.Domain.Abstractions.csproj", "{040D002D-B251-45BA-9C14-52FA92E08E90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekTime.Infrastructure.Core", "GeekTime.Infrastructure.Core\GeekTime.Infrastructure.Core.csproj", "{A1A457CD-14DC-4FF5-BA4F-4BC093331396}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekTime.Infrastructure.Core", "GeekTime.Infrastructure.Core\GeekTime.Infrastructure.Core.csproj", "{A1A457CD-14DC-4FF5-BA4F-4BC093331396}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekTime.Domain", "GeekTime.Domain\GeekTime.Domain.csproj", "{14C77DD7-3022-4B9A-82B1-7392B2B3F12A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekTime.Domain", "GeekTime.Domain\GeekTime.Domain.csproj", "{14C77DD7-3022-4B9A-82B1-7392B2B3F12A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekTime.Infrastructure", "GeekTime.Infrastructure\GeekTime.Infrastructure.csproj", "{46CAAE76-0A9D-4990-A657-E2BD3F7D44B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekTime.Infrastructure", "GeekTime.Infrastructure\GeekTime.Infrastructure.csproj", "{46CAAE76-0A9D-4990-A657-E2BD3F7D44B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekTime.API", "GeekTime.API\GeekTime.API.csproj", "{B37319AF-F0C0-4788-92C5-9E8A9785D097}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekTime.API", "GeekTime.API\GeekTime.API.csproj", "{B37319AF-F0C0-4788-92C5-9E8A9785D097}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekTime.BackgroundTasks", "GeekTime.BackgroundTasks\GeekTime.BackgroundTasks.csproj", "{747F55E3-6354-42A9-89A7-B24E96F4A721}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekTime.BackgroundTasks", "GeekTime.BackgroundTasks\GeekTime.BackgroundTasks.csproj", "{747F55E3-6354-42A9-89A7-B24E96F4A721}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09.MediatR", "09.MediatR", "{D3AC74E3-8FF4-403E-81A7-C7687F86F495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorDemo", "MediatorDemo\MediatorDemo.csproj", "{E2949106-B627-4427-BF21-82BF9C5D4B61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,6 +187,10 @@ Global
 		{747F55E3-6354-42A9-89A7-B24E96F4A721}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{747F55E3-6354-42A9-89A7-B24E96F4A721}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{747F55E3-6354-42A9-89A7-B24E96F4A721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2949106-B627-4427-BF21-82BF9C5D4B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2949106-B627-4427-BF21-82BF9C5D4B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2949106-B627-4427-BF21-82BF9C5D4B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2949106-B627-4427-BF21-82BF9C5D4B61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -217,6 +225,7 @@ Global
 		{46CAAE76-0A9D-4990-A657-E2BD3F7D44B1} = {75C2C7DD-D12D-4824-AE27-9A7DC15F3554}
 		{B37319AF-F0C0-4788-92C5-9E8A9785D097} = {9BB27811-1E68-46D7-BC6A-5373D32C39E9}
 		{747F55E3-6354-42A9-89A7-B24E96F4A721} = {9BB27811-1E68-46D7-BC6A-5373D32C39E9}
+		{E2949106-B627-4427-BF21-82BF9C5D4B61} = {D3AC74E3-8FF4-403E-81A7-C7687F86F495}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E9D65C7-694A-444A-BF52-13F065509BEB}
