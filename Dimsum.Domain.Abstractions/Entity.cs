@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Dimsum.Domain.Abstractions
 {
-    public abstract class Entity: IEntity
+    public abstract class Entity : IEntity
     {
         public abstract object[] GetKeys();
 
@@ -12,6 +11,26 @@ namespace Dimsum.Domain.Abstractions
         {
             return $"[Entity:{GetType().Name}] Keys={string.Join(",", GetKeys())}";
         }
+
+        private List<IDomainEvent> _domainEvents;
+        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents?.AsReadOnly();
+
+        public void AddDomainEvent(IDomainEvent domainEvent)
+        {
+            _domainEvents ??= new List<IDomainEvent>();
+            _domainEvents.Add(domainEvent);
+        }
+
+        public void RemoveDomainEvent(IDomainEvent domainEvent)
+        {
+            _domainEvents?.Remove(domainEvent);
+        }
+
+        public void ClearDomainEvent()
+        {
+            _domainEvents?.Clear();
+        }
+
     }
 
     public abstract class Entity<TKey> : Entity, IEntity<TKey>

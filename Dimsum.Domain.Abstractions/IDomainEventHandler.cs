@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
 namespace Dimsum.Domain.Abstractions
 {
-    class IDomainEventHandler
+    public interface IDomainEventHandler<TDomainEvent> : INotificationHandler<TDomainEvent>
+        where TDomainEvent : IDomainEvent
     {
     }
 }

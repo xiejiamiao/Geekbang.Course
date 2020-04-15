@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetCore.CAP" Version="3.0.3" />
-    <PackageReference Include="DotNetCore.CAP.MySql" Version="3.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Dimsum.Domain.Abstractions\Dimsum.Domain.Abstractions.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dimsum.Domain\Dimsum.Domain.csproj" />
+    <ProjectReference Include="..\Dimsum.Infrastructure.Core\Dimsum.Infrastructure.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EntityTypeConfiguration\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+</Project>

@@ -79,7 +79,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekTime.BackgroundTasks", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09.MediatR", "09.MediatR", "{D3AC74E3-8FF4-403E-81A7-C7687F86F495}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorDemo", "MediatorDemo\MediatorDemo.csproj", "{E2949106-B627-4427-BF21-82BF9C5D4B61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatorDemo", "MediatorDemo\MediatorDemo.csproj", "{E2949106-B627-4427-BF21-82BF9C5D4B61}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10.MicroService", "10.MicroService", "{1C4039BC-5C99-4156-BE88-18A2BC194734}"
 EndProject
@@ -91,11 +91,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0A6F25AD-31B9-4C18-96F9-8A56FCF9726F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dimsum.Core", "Dimsum.Core\Dimsum.Core.csproj", "{4EF208F6-374D-48EE-A91B-CE253B9CB76C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dimsum.Core", "Dimsum.Core\Dimsum.Core.csproj", "{4EF208F6-374D-48EE-A91B-CE253B9CB76C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dimsum.Domain.Abstractions", "Dimsum.Domain.Abstractions\Dimsum.Domain.Abstractions.csproj", "{BFF0C50F-CC19-4D67-B127-98D48E073C2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dimsum.Domain.Abstractions", "Dimsum.Domain.Abstractions\Dimsum.Domain.Abstractions.csproj", "{BFF0C50F-CC19-4D67-B127-98D48E073C2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dimsum.Infrastructure.Core", "Dimsum.Infrastructure.Core\Dimsum.Infrastructure.Core.csproj", "{CF845B87-96FC-4868-92D6-4757B21A28B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dimsum.Infrastructure.Core", "Dimsum.Infrastructure.Core\Dimsum.Infrastructure.Core.csproj", "{CF845B87-96FC-4868-92D6-4757B21A28B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dimsum.Infrastructure", "Dimsum.Infrastructure\Dimsum.Infrastructure.csproj", "{7FCA7874-9878-47CC-BDC7-5FC68637230B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dimsum.Domain", "Dimsum.Domain\Dimsum.Domain.csproj", "{B351154D-F026-4E82-9FD4-01642110126F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -219,6 +223,14 @@ Global
 		{CF845B87-96FC-4868-92D6-4757B21A28B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF845B87-96FC-4868-92D6-4757B21A28B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF845B87-96FC-4868-92D6-4757B21A28B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FCA7874-9878-47CC-BDC7-5FC68637230B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FCA7874-9878-47CC-BDC7-5FC68637230B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FCA7874-9878-47CC-BDC7-5FC68637230B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FCA7874-9878-47CC-BDC7-5FC68637230B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B351154D-F026-4E82-9FD4-01642110126F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B351154D-F026-4E82-9FD4-01642110126F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B351154D-F026-4E82-9FD4-01642110126F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B351154D-F026-4E82-9FD4-01642110126F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -261,6 +273,8 @@ Global
 		{4EF208F6-374D-48EE-A91B-CE253B9CB76C} = {0A6F25AD-31B9-4C18-96F9-8A56FCF9726F}
 		{BFF0C50F-CC19-4D67-B127-98D48E073C2C} = {0A6F25AD-31B9-4C18-96F9-8A56FCF9726F}
 		{CF845B87-96FC-4868-92D6-4757B21A28B8} = {0A6F25AD-31B9-4C18-96F9-8A56FCF9726F}
+		{7FCA7874-9878-47CC-BDC7-5FC68637230B} = {A95F4553-BABE-4734-85AA-AD42A6E9713F}
+		{B351154D-F026-4E82-9FD4-01642110126F} = {BAF9255B-12BB-4133-A7EA-07135B8860C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E9D65C7-694A-444A-BF52-13F065509BEB}

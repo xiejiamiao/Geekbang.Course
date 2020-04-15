@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
 namespace Dimsum.Domain.Abstractions
 {
-    class IDomainEvent
+    public interface IDomainEvent:INotification
     {
     }
 }
