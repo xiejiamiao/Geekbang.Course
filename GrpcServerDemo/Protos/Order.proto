@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcDemo.Protos";
+
+
+message Order{
+	int32 Id = 1;
+	string OrderNo = 2;
+	int32 Status = 3;
+	float Payment = 4;
+	repeated OrderProduct Products = 5;
+	OrderAddress Address = 6;
+	int32 OrderOwner = 7;
+
+	message OrderProduct{
+		string ProductTitle = 1;
+		string SkuTitle = 2;
+		int32 Num = 3;
+		float UnitPrice = 4;
+	}
+
+	message OrderAddress{
+		string Province = 1;
+		string City = 2;
+		string Districe = 3;
+		string Detail = 4;
+		string Name = 5;
+		string Mobile = 6;
+	}
+}
+
+message GetByOrderNoRequest{
+	string OrderNo = 1;
+}
+
+message GetByOwnerRequest{
+	int32 OrderOwner = 1;
+}
+
+message BatchAddOrderNoReturnResponse{
+	bool IsAllSuccess = 1;
+	repeated string FailOrderNo = 2;
+}
+
+service OrderService{
+	rpc GetByOrderNo(GetByOrderNoRequest) returns(Order);
+	rpc GetByOwner(GetByOwnerRequest) returns(stream Order);
+	rpc AddOrder(Order) returns(Order);
+	rpc BatchAddOrder(stream Order) returns(stream Order);
+	rpc BatchAddOrderNoReturn(stream Order) returns(BatchAddOrderNoReturnResponse);
+}
+
